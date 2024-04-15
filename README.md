@@ -4,8 +4,9 @@
 
 ## 4/15
 
-```html
 <h4>オブジェクトの基礎</h4>
+```html
+
 <script>
   const dict = { apple: "りんご", banana: "バナナ", orange: "オレンジ" };
   console.log(dict.apple);
@@ -18,4 +19,7 @@
   delete dict.orange;
   console.log(dict);
 </script>
+
+```
+
 ```
