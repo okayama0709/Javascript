@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>インスタントラーメン</title>
+  </head>
+  <body>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <script>
+      const demaeicchou = {
+        name: "出前一丁",
+        soup: "醤油",
+        // メソッド
+        preview: function () {
+          const area = document.querySelector("#result");
+          area.innerHTML = `${this.name}は、${this.soup}ラーメンです。`;
+        },
+      };
+
+      demaeicchou.preview();
+      demaeicchou.soup = "とんこつ";
+      demaeicchou.preview = function () {
+        const area = document.querySelector("#result2");
+        area.innerHTML = `${this.name}は、${this.soup}ラーメンはありません`;
+      };
+      delete demaeicchou.name;
+      demaeicchou.preview();
+
+      //  クラスの定義
+      class InstantNoodle {
+        constructor(ramen, taste) {
+          this.name = ramen;
+          this.soup = taste;
+        }
+        // メソッドを入れる場合はより便利
+        descript() {
+          return `<p>${this.name}は、${this.soup}味です<p/>`;
+        }
+      }
+
+      //   const soltRamen = new InstantNoodle("サッポロ一番", "塩");
+      //   const demae = new InstantNoodle("出前一丁", "醤油");
+
+      //   console.log(soltRamen);
+      //   console.log(`${soltRamen.name}は${soltRamen.name}味です`);
+      //   console.log(demae);
+      //   console.log(`${demae.name}は、${demae.soup}味です`);
+
+      // 関数の実行
+      //   document.body.insertAdjacentHTML("beforeend", soltRamen.descript());
+      //   document.body.insertAdjacentHTML("beforeend", demae.descript());
+    </script>
+  </body>
+</html>
