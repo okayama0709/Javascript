@@ -9,24 +9,29 @@
     <p id="result"></p>
     <p id="result2"></p>
     <script>
-      const demaeicchou = {
-        name: "出前一丁",
-        soup: "醤油",
-        // メソッド
-        preview: function () {
-          const area = document.querySelector("#result");
-          area.innerHTML = `${this.name}は、${this.soup}ラーメンです。`;
-        },
-      };
+      // オブジェクト
+      // const demaeicchou = {
+      //   name: "出前一丁",
+      //   soup: "醤油",
+      //   // メソッド
+      //   preview: function () {
+      //     const area = document.querySelector("#result");
+      //     area.innerHTML = `${this.name}は、${this.soup}ラーメンです。`;
+      //   },
+      // };
 
-      demaeicchou.preview();
-      demaeicchou.soup = "とんこつ";
-      demaeicchou.preview = function () {
-        const area = document.querySelector("#result2");
-        area.innerHTML = `${this.name}は、${this.soup}ラーメンはありません`;
-      };
-      delete demaeicchou.name;
-      demaeicchou.preview();
+      // demaeicchou.preview();
+      // // スープの中身変更
+      // demaeicchou.soup = "とんこつ";
+      // // メソッドの内容変更
+      // demaeicchou.preview = function () {
+      //   const area = document.querySelector("#result2");
+      //   area.innerHTML = `${this.name}は、${this.soup}ラーメンはありません`;
+      // };
+      // // 名前を消去
+      // delete demaeicchou.name;
+      // // undefinedに成っているはず
+      // demaeicchou.preview();
 
       クラスの定義;
       class InstantNoodle {
