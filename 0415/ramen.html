@@ -35,6 +35,8 @@
 
       //クラスの定義;
       class InstantNoodle {
+        static TYPE = "インスタントラーメン";
+
         constructor(ramen, taste) {
           this.name = ramen;
           this.soup = taste;
@@ -42,6 +44,9 @@
         // メソッドを入れる場合はより便利
         descript() {
           return `<p>${this.name}は、${this.soup}味です<p/>`;
+        }
+        static making() {
+          return `${InstantNoodle.TYPE}は鍋で作ります。`;
         }
       }
 
@@ -67,15 +72,9 @@
         document.body.insertAdjacentHTML("beforeend", ramen.descript());
       });
 
-      // // 静的メソッドと静的プロパティ
-      // class InstantNoodle {
-      //   // 静的メソッド
-      //   static TYPE = "インスタントラーメン";
+      // 静的メソッドと静的プロパティ
 
-      //   static making() {
-      //     return `<p>${InstantNoodle.TYPE}は鍋で作ります。`;
-      //   }
-      // }
+      console.log(InstantNoodle.making());
     </script>
   </body>
 </html>

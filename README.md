@@ -44,6 +44,8 @@ console.log(demae);
 console.log(`${demae.name}は、${demae.soup}味です`);
 ```
 
+### class 関数の実行
+
 ```js
 //クラスの定義;
 class InstantNoodle {
@@ -63,4 +65,37 @@ const demae = new InstantNoodle("出前一丁", "醤油");
 //関数の実行;
 document.body.insertAdjacentHTML("beforeend", soltRamen.descript());
 document.body.insertAdjacentHTML("beforeend", demae.descript());
+```
+
+### 静的インスタンス
+
+```js
+class InstantNoodle {
+  static TYPE = "インスタントラーメン";
+
+  constructor(ramen, taste) {
+    this.name = ramen;
+    this.soup = taste;
+  }
+  // メソッドを入れる場合はより便利
+  descript() {
+    return `<p>${this.name}は、${this.soup}味です<p/>`;
+  }
+  static making() {
+    return `${InstantNoodle.TYPE}は鍋で作ります。`;
+  }
+}
+const ramens = [];
+ramens.push(new InstantNoodle("サッポロ一番塩", "塩"));
+ramens.push(new InstantNoodle("出前一丁", "醤油"));
+ramens.push(new InstantNoodle("うまかっちゃん", "とんこつ"));
+console.log(ramens);
+
+ramens.forEach((ramen) => {
+  document.body.insertAdjacentHTML("beforeend", ramen.descript());
+});
+
+// 静的メソッドと静的プロパティ
+
+console.log(InstantNoodle.making());
 ```
